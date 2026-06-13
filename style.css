@@ -1,0 +1,313 @@
+/* Custom Properties & Themes */
+:root {
+    --bg-color: #f5f7fb;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --input-bg: #f8fafc;
+    --tip-bg: #eef2ff;
+    --tip-text: #4338ca;
+    
+    /* Strength Colors */
+    --color-red: #ef4444;
+    --color-orange: #f97316;
+    --color-yellow: #eab308;
+    --color-light-green: #84cc16;
+    --color-green: #22c55e;
+}
+
+body.dark {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --primary: #818cf8;
+    --primary-hover: #6366f1;
+    --input-bg: #0f172a;
+    --tip-bg: #312e81;
+    --tip-text: #e0e7ff;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.05);
+}
+
+/* Card Container */
+.card {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 480px;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.icon-wrapper {
+    background-color: var(--tip-bg);
+    color: var(--primary);
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 12px;
+}
+
+.header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Input Section */
+.input-wrapper {
+    position: relative;
+    margin-bottom: 12px;
+}
+
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 14px 80px 14px 16px;
+    background-color: var(--input-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--text-main);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+input:focus {
+    border-color: var(--primary);
+}
+
+.input-actions {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.input-actions button {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.input-actions button:hover {
+    color: var(--primary);
+}
+
+.controls-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.char-count {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Strength Meter Section */
+.strength-section {
+    margin-bottom: 24px;
+}
+
+.strength-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.progress-bg {
+    background-color: var(--border-color);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--color-red);
+    transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.feedback-msg {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Rules List */
+.rules-section {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.rules-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.rules-list {
+    list-style: none;
+}
+
+.rules-list li {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.rules-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* Custom Check/Cross Icons using pseudo-elements */
+.rules-list li::before {
+    content: "✕";
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #fee2e2;
+    color: var(--color-red);
+    font-size: 10px;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.rules-list li.valid {
+    color: var(--text-main);
+}
+
+.rules-list li.valid::before {
+    content: "✓";
+    background-color: #dcfce7;
+    color: var(--color-green);
+}
+
+body.dark .rules-list li::before {
+    background-color: rgba(239, 68, 68, 0.2);
+}
+body.dark .rules-list li.valid::before {
+    background-color: rgba(34, 197, 94, 0.2);
+}
+
+/* Tips Section */
+.tip-section {
+    background-color: var(--tip-bg);
+    color: var(--tip-text);
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.4;
+}
+
+.tip-section svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    .card { padding: 24px; }
+    .controls-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
