@@ -2,7 +2,7 @@
 
 A modern, responsive, and beginner-friendly Password Strength Checker web application. Built entirely with Vanilla HTML, CSS, and JavaScript, it is ready to be hosted instantly on GitHub Pages.
 
-Live Demo: https://vamsirajoleti.github.io/Password-checker-/
+Live Demo: https://vamsi-raju-oleti.github.io/Password-checker-/
 
 ## Features
 
